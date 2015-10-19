@@ -63,7 +63,7 @@ public class fhabitacion {
     }
     
     public boolean insertar(vhabitacion dts){
-        sSQL="insert into habitacion (numero,piso,descripcion,caracteristicas,precio_diario,estado,tipo_habitacion" +
+        sSQL="insert into habitacion (numero,piso,descripcion,caracteristicas,precio_diario,estado,tipo_habitacion)" +
                 "values (?,?,?,?,?,?,?)";
         
         try {
