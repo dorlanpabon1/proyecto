@@ -198,6 +198,11 @@ public class frmhabitacion extends javax.swing.JFrame {
         jLabel8.setText("Tipo de Habitación:");
 
         cbotipo_habitacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Individual", "Matrimonial", "Familiar", "Presidencial" }));
+        cbotipo_habitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbotipo_habitacionActionPerformed(evt);
+            }
+        });
 
         btnnuevo.setBackground(new java.awt.Color(102, 102, 102));
         btnnuevo.setForeground(new java.awt.Color(255, 255, 255));
@@ -320,13 +325,14 @@ public class frmhabitacion extends javax.swing.JFrame {
 
         tablalistado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7"
             }
         ));
         tablalistado.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -465,12 +471,12 @@ public class frmhabitacion extends javax.swing.JFrame {
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
 
         if (txtnumero.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un numero de habitacion");
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un Numero de Habitacion");
             txtnumero.requestFocus();
             return;
         }
         if (txtdescripcion.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar una descripcion para la habitacion");
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar una descripción para la habitacion");
             txtdescripcion.requestFocus();
             return;
         }
@@ -564,7 +570,7 @@ public class frmhabitacion extends javax.swing.JFrame {
     }//GEN-LAST:event_cboestadoActionPerformed
 
     private void tablalistadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablalistadoMouseClicked
-        btnguardar.setText("editar");
+        btnguardar.setText("Editar");
         habilitar();
         btneliminar.setEnabled(true);
         accion="editar";
@@ -585,6 +591,10 @@ public class frmhabitacion extends javax.swing.JFrame {
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnsalirActionPerformed
+
+    private void cbotipo_habitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbotipo_habitacionActionPerformed
+    transferFocus();
+    }//GEN-LAST:event_cbotipo_habitacionActionPerformed
 
     /**
      * @param args the command line arguments

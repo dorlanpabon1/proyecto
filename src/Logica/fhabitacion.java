@@ -28,13 +28,13 @@ public class fhabitacion {
         
     DefaultTableModel modelo;
     
-    String [] titulos = {"ID","Número","Piso","Descripcion","Caracteristicas","Precio","Estado","Tipo habitacion"};
+    String [] titulos = {"ID","Número","Piso","Descripción","Caracteristicas","Precio","Estado","Tipo habitación"};
     
     String [] registro =new String[8];
     
     totalregistros=0;
     modelo = new DefaultTableModel(null,titulos);
-    sSQL= "select * from habitacion where piso like '%" + buscar + "%' order by habitacion";
+    sSQL= "select * from habitacion where piso like '%" + buscar + "%' order by idhabitacion";
         try {
             Statement st= cn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
@@ -44,7 +44,7 @@ public class fhabitacion {
                 registro [1]=rs.getString("numero");
                 registro [2]=rs.getString("piso");
                 registro [3]=rs.getString("descripcion");
-                registro [4]=rs.getString("caracteristica");
+                registro [4]=rs.getString("caracteristicas");
                 registro [5]=rs.getString("precio_diario");
                 registro [6]=rs.getString("estado");
                 registro [7]=rs.getString("tipo_habitacion");
@@ -63,7 +63,7 @@ public class fhabitacion {
     }
     
     public boolean insertar(vhabitacion dts){
-        sSQL="inser into habitacion (numero,piso,descripcion,caracteristicas,precio_diario,estado,tipo_habitacion" +
+        sSQL="insert into habitacion (numero,piso,descripcion,caracteristicas,precio_diario,estado,tipo_habitacion" +
                 "values (?,?,?,?,?,?,?)";
         
         try {
@@ -119,7 +119,7 @@ public class fhabitacion {
         }
     }
     public boolean eliminar(vhabitacion dts){
-        sSQL="delete from habitacion where idhabitacion";
+        sSQL="delete from habitacion where idhabitacion=?";
         try {
             PreparedStatement pst=cn.prepareStatement(sSQL);
            
