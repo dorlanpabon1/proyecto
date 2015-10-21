@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Juan
  */
-public class frmcliente extends javax.swing.JFrame {
+public class frmcliente extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form frmcliente
@@ -148,7 +148,10 @@ public class frmcliente extends javax.swing.JFrame {
         btneliminar = new javax.swing.JButton();
         lbltotalregistros = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
+        setMaximizable(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 51, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro de Clientes"));

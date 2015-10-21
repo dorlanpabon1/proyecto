@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Juan
  */
-public class frmhabitacion extends javax.swing.JFrame {
+public class frmhabitacion extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form frmhabitacion
@@ -135,7 +135,10 @@ public class frmhabitacion extends javax.swing.JFrame {
         btneliminar = new javax.swing.JButton();
         lbltotalregistros = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
+        setMaximizable(true);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Habitación");

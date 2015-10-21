@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Juan
  */
-public class frmtrabajador extends javax.swing.JFrame {
+public class frmtrabajador extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form frmcliente
@@ -172,7 +172,10 @@ public class frmtrabajador extends javax.swing.JFrame {
         btneliminar = new javax.swing.JButton();
         lbltotalregistros = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
+        setMaximizable(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 51, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro de Tajadores"));
@@ -435,7 +438,7 @@ public class frmtrabajador extends javax.swing.JFrame {
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Clientes");
+        jLabel1.setText("Trabajadores");
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Listado de Trabajadores"));
@@ -507,8 +510,8 @@ public class frmtrabajador extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                        .addComponent(txtbuscar)
+                        .addGap(18, 18, 18)
                         .addComponent(btnbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btneliminar)
@@ -516,7 +519,7 @@ public class frmtrabajador extends javax.swing.JFrame {
                         .addComponent(btnsalir))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane3)))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
